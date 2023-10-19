@@ -1,0 +1,30 @@
+﻿@page "/image"
+
+<PageTitle>Image</PageTitle>
+
+<h3>Image</h3>
+
+<div class="row  w-50">
+    <img src="@imageSource"/>
+</div>
+<div class="row">
+    <div class="col">
+        <button @onclick="OnClick_LoadImage">Load and predict</button>
+    </div>
+    <div class="col">
+        <button @onclick="OnClick_FineTune">Fine tune</button>
+    </div>
+</div>
+
+@code {
+    public string imageSource { get; set; }    
+
+    private void OnClick_LoadImage()
+    {
+        imageSource = ($"https://picsum.photos/seed/picsum/200/300");
+    }
+
+    private void OnClick_FineTune()
+    {
+    }
+}
